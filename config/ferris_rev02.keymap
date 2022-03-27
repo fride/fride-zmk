@@ -13,6 +13,11 @@
 #define NUM_L 3
 #define SYM_L 4
 
+// mad-tap tapping term for home row mods!?
+&mt {
+    tapping-term-ms = <200>;
+};
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
@@ -28,15 +33,35 @@
         };
     };
 
+   combos {
+        compatible = "zmk,combos";
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <26 29>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_z {
+            timeout-ms = <50>;
+            key-positions = <20 23>;
+            bindings = <&kp ESC>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
+        // 0  1   2  3  4    5  6  7  8  9
+        // 10 11 12 13 14   15 16 17 18 19
+        // 20 21 22 23 24   25 26 27 28 29
+        //          30 31   32 33
+        //
         default_layer {
             bindings = <
-                &kp Q      &kp W      &kp E       &kp R          &kp T         &kp Y            &kp U          &kp I       &kp O      &kp P
-                &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F    &kp G         &kp H            &hm RSHFT J    &hm RCTRL K &hm LALT L &hm LGUI QUOT
-                &kp Z      &kp X      &kp C       &kp V          &kp B         &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH
-                                                  &lt NAV_L TAB  &kp ENTER     &lt NUM_L SPACE  &lt SYM_L BKSP
+                &kp J      &kp G      &kp M       &kp P          &kp V         &kp SEMI         &kp DOT        &kp SLASH   &kp DQT    &kp SQT
+                &hm LGUI R &hm LALT S &hm LCTRL N &hm LSHFT D    &kp B         &kp COMMA        &hm RSHFT A    &hm RCTRL E &hm LALT I &hm LGUI H
+                &kp X      &kp F      &kp L       &kp C          &kp W         &kp MIN          &kp M          &kp U       &kp O      &kp K
+                                                  &lt NAV_L T    &kp ENTER     &lt NUM_L SPACE  &lt SYM_L SPC
             >;
         };
 
