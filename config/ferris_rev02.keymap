@@ -13,6 +13,14 @@
 #define NUM_L 3
 #define SYM_L 4
 
+
+// used from combos ;)
+// 0  1   2  3  4    5  6  7  8  9
+// 10 11 12 13 14   15 16 17 18 19
+// 20 21 22 23 24   25 26 27 28 29
+//          30 31   32 33
+//
+
 // mad-tap tapping term for home row mods!?
 &mt {
     tapping-term-ms = <200>;
@@ -51,11 +59,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // 0  1   2  3  4    5  6  7  8  9
-        // 10 11 12 13 14   15 16 17 18 19
-        // 20 21 22 23 24   25 26 27 28 29
-        //          30 31   32 33
-        //
+       
         default_layer {
             bindings = <
                 &kp J      &kp G      &kp M       &kp P          &kp V         &kp SEMI         &kp DOT        &kp SLASH   &kp DQT    &kp SQT
